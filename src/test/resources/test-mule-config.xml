@@ -1,0 +1,19 @@
+<mule xmlns="http://www.mulesoft.org/schema/mule/core"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xmlns:twitter="http://www.mulesoft.org/schema/mule/twitter"
+      xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+          http://www.mulesoft.org/schema/mule/twitter http://www.mulesoft.org/schema/mule/twitter/current/mule-twitter.xsd">
+
+    <twitter:config name="config" configId="configId">
+        <twitter:connection requiredParameter="aValue" />
+    </twitter:config>
+
+    <flow name="sayHiFlow">
+        <twitter:say-hi person="Mariano Gonzalez"/>
+    </flow>
+
+    <flow name="retrieveInfoFlow">
+        <twitter:retrieve-info config-ref="config"/>
+    </flow>
+
+</mule>

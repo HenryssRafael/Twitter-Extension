@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.mule.extension</groupId>
+	<artifactId>mule-basic-extension</artifactId>
+	<version>1.6.0-SNAPSHOT</version>
+	<packaging>mule-extension</packaging>
+	<name>Twitter Extension</name>
+
+	<parent>
+		<groupId>org.mule.extensions</groupId>
+		<artifactId>mule-modules-parent</artifactId>
+		<version>1.1.3</version>
+	</parent>
+
+	<properties>
+		<app.runtime>4.2.2-20210129</app.runtime>
+		<jersey.version>1.6</jersey.version>
+        <jersey.multipart.version>1.3</jersey.multipart.version>
+	</properties>
+	<dependencies>
+	<!-- Required by Devkit when using OAuth -->   
+     	<dependency>
+       		<groupId>oauth.signpost</groupId>
+       		<artifactId>signpost-core</artifactId>
+       		<version>1.2.1.2</version>
+  		</dependency>
+    	<dependency>
+			<groupId>com.sun.jersey</groupId>
+			<artifactId>jersey-client</artifactId>
+			<version>${jersey.version}</version>
+		</dependency>
+        <dependency>
+            <groupId>com.sun.jersey</groupId>
+            <artifactId>jersey-json</artifactId>
+            <version>${jersey.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.sun.jersey.contribs</groupId>
+            <artifactId>jersey-multipart</artifactId>
+            <version>${jersey.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.sun.jersey.contribs.jersey-oauth</groupId>
+            <artifactId>oauth-client</artifactId>
+            <version>${jersey.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.sun.jersey.contribs.jersey-oauth</groupId>
+            <artifactId>oauth-signature</artifactId>
+            <version>${jersey.version}</version>
+        </dependency>
+	</dependencies>
+</project>
